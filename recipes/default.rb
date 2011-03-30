@@ -66,7 +66,7 @@ bash "fix broken symlink" do
     so_file=$(ls -1 libclntsh.so.*)
     ln -sf ./$so_file libclntsh.so
   FIX
-  not_if    %{test -h libclntsh.so}
+  not_if    %{test -h #{root_path}/instantclient_*/libclntsh.so}
 end
 
 template "/etc/profile.d/instantclient.sh" do
