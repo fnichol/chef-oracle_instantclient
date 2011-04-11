@@ -35,11 +35,13 @@ package "unzip"
 remote_file "#{cache_path}/#{basic_zip}" do
   source    opts[:basic_url]
   mode      "0644"
+  action    :create_if_missing
 end
 
 remote_file "#{cache_path}/#{sdk_zip}" do
   source    opts[:sdk_url]
   mode      "0644"
+  action    :create_if_missing
 end
 
 directory opts[:root_path] do
