@@ -1,6 +1,6 @@
 #!/bin/sh
 
-oracle_path=$(ls -1d <%= node[:oracle_instantclient][:root_path] %>/instantclient_*)
+oracle_path=$(ls -1d <%= node['oracle_instantclient']['root_path'] %>/instantclient_*)
 
 if [[ -z "$LD_LIBRARY_PATH" ]] ; then
   LD_LIBRARY_PATH="$oracle_path"
@@ -10,4 +10,4 @@ fi
 
 export LD_LIBRARY_PATH
 
-exec "<%= node[:rvm][:root_path] %>/wrappers/<%= node[:rvm_passenger][:rvm_ruby] %>/ruby" "$@"
+exec "<%= node['rvm']['root_path'] %>/wrappers/<%= node['rvm_passenger']['rvm_ruby'] %>/ruby" "$@"

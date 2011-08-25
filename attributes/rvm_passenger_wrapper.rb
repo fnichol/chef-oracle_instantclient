@@ -17,5 +17,5 @@
 # limitations under the License.
 #
 
-default[:oracle_instantclient][:rvm_passenger_wrapper][:root_path] =
+default['oracle_instantclient']['rvm_passenger_wrapper']['root_path'] =
   "/usr/local/bin"

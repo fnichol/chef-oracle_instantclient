@@ -17,18 +17,18 @@
 # limitations under the License.
 #
 
-include_recipe "rvm"
+include_recipe "rvm::system_install"
 
-root_path = node[:oracle_instantclient][:rvm_passenger_wrapper][:root_path]
+root_path = node['oracle_instantclient']['rvm_passenger_wrapper']['root_path']
 wrapper   = "#{root_path}/passenger_ruby"
 
 # inject this wrapper script in place of default RVM wrapper in rvm_passenger
 # recipe
-node.set[:rvm_passenger][:ruby_wrapper] = wrapper
+node.set['rvm_passenger']['ruby_wrapper'] = wrapper
 
 template wrapper do
-  source    "passenger_ruby.erb"
-  owner     "root"
-  group     "rvm"
-  mode      "0755"
+  source    'passenger_ruby.erb'
+  owner     'root'
+  group     'rvm'
+  mode      '0755'
 end
