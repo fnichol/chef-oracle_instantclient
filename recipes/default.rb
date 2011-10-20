@@ -103,3 +103,12 @@ template "/etc/profile.d/instantclient.sh" do
   source    'instantclient.sh.erb'
   mode      '0644'
 end
+
+if node['platform'] == "ubuntu"
+  template "/etc/ld.so.conf.d/instantclient.conf" do
+    source  'ld.so.conf.erb'
+    mode    '0644'
+  end
+
+  execute "ldconfig"
+end

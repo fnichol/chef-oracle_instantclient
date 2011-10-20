@@ -41,6 +41,8 @@ when "Darwin"
   end
 when "Linux"
   node.set['oracle_instantclient']['pkgs']          = %w{unzip}
+  default['oracle_instantclient']['lib_path']       =
+    "#{node['oracle_instantclient']['root_path']}/instantclient_11_2"
 
   case kernel.machine
   when "x86_64"
@@ -54,6 +56,10 @@ when "Linux"
     sdk_zip   = "instantclient-sdk-linux32-11.2.0.2.0.zip"
     sdk_sha   = "172c0116de16f55abd775aaf4dd1666d0e64eb1226b43388974ccf83235c8b18"
   end
+end
+
+if node['platform'] == "ubuntu"
+  node.set['oracle_instantclient']['pkgs'] += %w{libaio-dev}
 end
 
 default['oracle_instantclient']['basic_zip']  = basic_zip
