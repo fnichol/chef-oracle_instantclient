@@ -11,6 +11,7 @@ recipe "oracle_instantclient::rvm_passenger_wrapper", ""
 recommends "rvm",           "~> 0.8.0"
 recommends "rvm_passenger"
 
-%w{ ubuntu debian suse mac_os_x }.each do |os|
-  supports os
-end
+supports "ubuntu"
+supports "debian"
+supports "suse"
+supports "mac_os_x"
