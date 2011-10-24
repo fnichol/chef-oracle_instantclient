@@ -48,7 +48,7 @@ when "Linux"
   when "x86_64"
     basic_zip = "instantclient-basic-linux-x86-64-11.2.0.2.0.zip"
     basic_sha = "eeaa8101138b59c73c22bbb25e2a1cfd415dc830cafba6f9f19696789ab666e2"
-    sdk_zip   = "instantclient-sdk-10.2.0.4.0-macosx-x64.zip"
+    sdk_zip   = "instantclient-sdk-linux-x86-64-11.2.0.2.0.zip"
     sdk_sha   = "0373694ee8842cdc997616f1606091fe772c0799ad66757b2cfff73e3fae2b3d"
   else
     basic_zip = "instantclient-basic-linux32-11.2.0.2.0.zip"
